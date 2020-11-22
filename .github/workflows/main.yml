@@ -41,11 +41,13 @@ jobs:
           zip -r $reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip ./
           mkdir GITHUB_WORKFLOW_OUTPUT
           mv $reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip ./GITHUB_WORKFLOW_OUTPUT
+          cd GITHUB_WORKFLOW_OUTPUT
+          copy $reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip rendermanForBlender.28x.zip
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.1
         with:
           # Artifact name
-          name: $reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date
+          name: rendermanForBlender.28x
           # A file, directory or wildcard pattern that describes what to upload
-          path: GITHUB_WORKFLOW_OUTPUT/$reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip
+          path: rendermanForBlender.28x.zip
         
