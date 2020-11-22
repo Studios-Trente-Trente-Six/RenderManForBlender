@@ -40,12 +40,12 @@ jobs:
           echo "  date:$date\n" >> buildinfo.txt
           zip -r $GITHUB_REPOSITORY.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip ./
           mkdir GITHUB_WORKFLOW_OUTPUT
-          mv $GITHUB_REPOSITORY.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip ./GITHUB_WORKFLOW_OUTPUT
+          mv $reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip ./GITHUB_WORKFLOW_OUTPUT
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.1
         with:
           # Artifact name
-          name: $GITHUB_REPOSITORY.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date
+          name: $reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date
           # A file, directory or wildcard pattern that describes what to upload
-          path: GITHUB_WORKFLOW_OUTPUT/$GITHUB_REPOSITORY.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip
+          path: GITHUB_WORKFLOW_OUTPUT/$reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip
         
