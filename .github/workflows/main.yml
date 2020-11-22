@@ -30,7 +30,7 @@ jobs:
         run: |
           touch .github.buildinfo.txt
           date=$(date +"%m-%d-%y")
-          reponame=$(echo "$GITHUB_REPOSITORY" | tr "/" _
+          reponame=$(echo "$GITHUB_REPOSITORY" | tr "/" _)
           echo "# AUTO GENERATED FILE\n\n" >> buildinfo.txt
           echo "RenderMan for blender addon, developped by pixar, maintained by Louis BERTRAND from Studio Trente Trente-Six, under MIT License\n\n" >> buildinfo.txt
           echo "Built from Github Actions Workflow:\n" >> buildinfo.txt
