@@ -38,7 +38,7 @@ jobs:
           echo "  GITHUB_WORKFLOW:$GITHUB_WORKFLOW\n" >> buildinfo.txt
           echo "  GITHUB_RUN_ID:$GITHUB_RUN_ID\n" >> buildinfo.txt
           echo "  date:$date\n" >> buildinfo.txt
-          zip -r $GITHUB_REPOSITORY.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip ./
+          zip -r $reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip ./
           mkdir GITHUB_WORKFLOW_OUTPUT
           mv $reponame.$GITHUB_WORKFLOW-$GITHUB_RUN_ID.$date.zip ./GITHUB_WORKFLOW_OUTPUT
       - name: Upload a Build Artifact
